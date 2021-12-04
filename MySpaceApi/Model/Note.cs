@@ -12,6 +12,7 @@ namespace MySpaceApi.Models
         [Required]
         //public String UserID { get; set; }
         //[Required]
+        public String SectionID { get; set; }
         public String Content { get; set; }
         [StringLength(500)]
         public String Priority { get; set; }

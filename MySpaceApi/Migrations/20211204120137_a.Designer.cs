@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySpaceApi.Data;
 
 namespace MySpaceApi.Migrations
 {
     [DbContext(typeof(MySpaceApiDbContext))]
-    partial class MySpaceApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211204120137_a")]
+    partial class a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
