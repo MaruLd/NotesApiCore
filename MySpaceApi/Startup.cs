@@ -77,23 +77,14 @@ namespace MySpaceApi
     // or from the environment variable from Heroku, use it to set up your DbContext.
                 options.UseNpgsql(connStr);
             });
-
-            using var scope = app.Services.CreateScope();
-            var services = scope.ServiceProvider;
-
-            try
-            {
-                var context = services.GetRequiredService<DataContext>();
-                await context.Database.MigrateAsync();
-            }
-            catch { }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MySpaceApiDbContext context)
         {
             //if (env.IsDevelopment())
             //{
+            context.Database.Migrate();
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MySpaceApi v1"));
@@ -109,6 +100,8 @@ namespace MySpaceApi
             {
                 endpoints.MapControllers();
             });
+
+            
         }
 
     }
