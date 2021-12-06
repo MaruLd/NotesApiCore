@@ -13,9 +13,9 @@ namespace MySpaceApi.Data
         public DbSet<Section> Section { get; set; }
         public DbSet<Note> Note { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=MySpaceApiDb;Integrated Security=True;");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=MySpaceApiDb;Integrated Security=True;");
+        //}
     }
 }

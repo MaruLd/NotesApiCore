@@ -39,7 +39,7 @@ namespace MySpaceApi
             services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
-            services.AddDbContext<MySpaceApiDbContext>();
+            //services.AddDbContext<MySpaceApiDbContext>();
 
             services.AddDbContext<MySpaceApiDbContext>(options =>
             {
